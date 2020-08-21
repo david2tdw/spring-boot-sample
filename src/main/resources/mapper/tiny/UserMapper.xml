@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.tiny.mapper.UserMapper">
+
+    <select id="selectUserById" resultType="com.macro.mall.tiny.entity.User">
+        select *
+        from User
+          <if test="id != null">
+              where id  = #{id}
+          </if>
+
+
+    </select>
+
+    <select id="getFid4DCustomerCount" resultType="java.lang.Integer">
+        select count(1)
+        from AC_FEE a
+        <if test="dcCaozuoId!=null">
+            join (
+            select JOB_NO
+            from ac_order
+            where dc_user_id=#{dcCaozuoId}
+            union all
+            select QUOTE_NO as JOB_NO
+            from ac_import_order
+            where dc_user_id=#{dcCaozuoId}
+            ) o on o.JOB_NO = a.JOB_NO
+        </if>
+        <if test="kefuId!=null and kefuId!=''">
+            join db_company d on d.comp_code=a.comp_code and d.del_flag=0 and d.kefu_id=#{kefuId}
+        </if>
+        <if test="acCaozuoId!=null and acCaozuoId!=''">
+            join db_company d on d.comp_code=a.comp_code and d.del_flag=0
+            and (d.CAOZUO_ID=#{acCaozuoId} or d.DANZHENG_ID=#{acCaozuoId})
+        </if>
+        <where>
+            <if test="compCode!=null and compCode!=''">
+                and a.comp_code=#{compCode}
+            </if>
+            <if test="feeCreateFrom!=null">
+                and a.create_time &gt;= #{feeCreateFrom}
+            </if>
+            <if test="feeCreateTo!=null">
+                and a.create_time &lt;= #{feeCreateTo}
+            </if>
+            <if test="jobNoLike!=null">
+                and a.job_no like #{jobNoLike}
+            </if>
+            <if test="feeStatus!=null and feeStatus!=''">
+                and a.FEE_STATUS = #{feeStatus}
+            </if>
+        </where>
+    </select>
+</mapper>
