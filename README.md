@@ -1,6 +1,4 @@
 # mall-tiny-plus环境配置
-## 地址
-https://mp.weixin.qq.com/s/Q9ybpfq8IEdbZmvlaMXJdg
 
 ## 技术选型
 myBatis-plus, maven, spring, spring security, token, spring task, redis, swagger
@@ -26,5 +24,6 @@ mvn clean install -Dmaven.test.skip=true
     账号：admin 密码：123456
     
 ## 文章
-[初步理解Spring Security并实践](https://www.jianshu.com/p/e6655328b211)
-[Spring Task定时任务的配置和使用](https://www.jianshu.com/p/25c601f43552)
+[初步理解Spring Security并实践](https://www.jianshu.com/p/e6655328b211)  
+[Spring Task定时任务的配置和使用](https://www.jianshu.com/p/25c601f43552)  
+[项目原型](https://mp.weixin.qq.com/s/Q9ybpfq8IEdbZmvlaMXJdg)
