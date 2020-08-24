@@ -22,7 +22,7 @@ import java.util.Map;
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "UmsAdminController", description = "后台用户管理")
+@Api(tags = "管理员", description = "后台Admin用户管理")
 @RequestMapping("/admin")
 public class UmsAdminController {
     @Autowired

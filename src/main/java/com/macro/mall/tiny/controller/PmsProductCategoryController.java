@@ -28,7 +28,7 @@ import java.util.Map;
  * @since 2020-08-24
  */
 @RestController
-@Api(tags = "PmsProductCategoryController", description = "产品分页")
+@Api(tags = "产品", description = "产品分页")
 @RequestMapping("/product")
 public class PmsProductCategoryController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PmsProductCategoryController.class);

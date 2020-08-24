@@ -3,15 +3,17 @@ package com.macro.mall.tiny.vo.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
-import javax.validation.constraints.NotBlank;
 
-@ApiModel("admin user-参数")
+@ApiModel("普通用户")
+@Accessors(chain = true)
 @Data
-public class UserParam {
+public class NormalUserParam {
     @ApiModelProperty("name")
-    @NotBlank(message = "请指定admin name")
     private String name;
     @ApiModelProperty("age")
     private int age;
+    @ApiModelProperty("email")
+    private String email;
 }
