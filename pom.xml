@@ -40,12 +40,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--MyBatis分页插件-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.pagehelper</groupId>-->
-        <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
-        <!--            <version>1.2.10</version>-->
-        <!--        </dependency>-->
+        <!-- MyBatis分页插件, 和MyBatis Plus插件有冲突 -->
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--            <version>1.2.10</version>-->
+<!--        </dependency>-->
         <!--集成druid连接池-->
         <dependency>
             <groupId>com.alibaba</groupId>
